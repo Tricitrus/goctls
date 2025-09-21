@@ -3,11 +3,11 @@ package middleware
 import (
 	"errors"
 	"github.com/redis/go-redis/v9"{{if .useTrans}}
-    "github.com/suyuan32/simple-admin-common/i18n"{{end}}
-	"github.com/suyuan32/simple-admin-common/orm/ent/entctx/datapermctx"
-	"github.com/suyuan32/simple-admin-common/orm/ent/entctx/deptctx"
-	"github.com/suyuan32/simple-admin-common/orm/ent/entctx/rolectx"
-	"github.com/suyuan32/simple-admin-common/orm/ent/entenum"
+    "github.com/Tricitrus/tricitrus-admin-common/i18n"{{end}}
+	"github.com/Tricitrus/tricitrus-admin-common/orm/ent/entctx/datapermctx"
+	"github.com/Tricitrus/tricitrus-admin-common/orm/ent/entctx/deptctx"
+	"github.com/Tricitrus/tricitrus-admin-common/orm/ent/entctx/rolectx"
+	"github.com/Tricitrus/tricitrus-admin-common/orm/ent/entenum"
 	"github.com/zeromicro/go-zero/core/errorx"
 	"github.com/zeromicro/go-zero/core/logx"
 	"github.com/zeromicro/go-zero/rest/httpx"

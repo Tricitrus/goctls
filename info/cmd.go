@@ -16,9 +16,9 @@
 package info
 
 import (
-	"github.com/suyuan32/goctls/info/env"
-	"github.com/suyuan32/goctls/info/port"
-	"github.com/suyuan32/goctls/internal/cobrax"
+	"github.com/Tricitrus/goctls/info/env"
+	"github.com/Tricitrus/goctls/info/port"
+	"github.com/Tricitrus/goctls/internal/cobrax"
 )
 
 var (
@@ -31,10 +31,7 @@ var (
 )
 
 func init() {
-
-	var (
-		envCmdFlags = EnvCmd.Flags()
-	)
+	envCmdFlags := EnvCmd.Flags()
 
 	envCmdFlags.StringVarPWithDefaultValue(&env.ServiceName, "service_name", "s", "core")
 	envCmdFlags.BoolVarP(&env.ShowList, "list", "l")

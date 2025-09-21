@@ -8,9 +8,9 @@ import (
     "{{.projectPath}}{{.importPrefix}}/internal/types"
     "{{.projectPath}}{{.importPrefix}}/internal/utils/dberrorhandler"
 
-{{if .useI18n}}    "github.com/suyuan32/simple-admin-common/i18n"
-{{else}}    "github.com/suyuan32/simple-admin-common/msg/errormsg"
-{{end}}{{if .useUUID}}    "github.com/suyuan32/simple-admin-common/utils/uuidx"
+{{if .useI18n}}    "github.com/Tricitrus/tricitrus-admin-common/i18n"
+{{else}}    "github.com/Tricitrus/tricitrus-admin-common/msg/errormsg"
+{{end}}{{if .useUUID}}    "github.com/Tricitrus/tricitrus-admin-common/utils/uuidx"
 {{end}}    "github.com/zeromicro/go-zero/core/logx"
 )
 

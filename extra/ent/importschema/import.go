@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/suyuan32/goctls/extra/ent/importschema/mux"
+	"github.com/Tricitrus/goctls/extra/ent/importschema/mux"
 
 	"ariga.io/atlas/sql/schema"
 
@@ -21,7 +21,7 @@ import (
 )
 
 const (
-	//header         = "Code generated " + "by entimport, DO NOT EDIT."
+	// header         = "Code generated " + "by entimport, DO NOT EDIT."
 	to edgeDir = iota
 	from
 )

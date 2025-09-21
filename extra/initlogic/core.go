@@ -28,7 +28,7 @@ import (
 	"github.com/iancoleman/strcase"
 	"github.com/pkg/errors"
 
-	"github.com/suyuan32/goctls/util/console"
+	"github.com/Tricitrus/goctls/util/console"
 )
 
 //go:embed core.tpl

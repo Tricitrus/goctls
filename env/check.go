@@ -6,17 +6,17 @@ import (
 	"strings"
 	"time"
 
+	"github.com/Tricitrus/goctls/util/pathx"
 	"github.com/duke-git/lancet/v2/fileutil"
-	"github.com/suyuan32/goctls/util/pathx"
 
 	"github.com/spf13/cobra"
 
-	"github.com/suyuan32/goctls/pkg/env"
-	"github.com/suyuan32/goctls/pkg/goswagger"
-	"github.com/suyuan32/goctls/pkg/protoc"
-	"github.com/suyuan32/goctls/pkg/protocgengo"
-	"github.com/suyuan32/goctls/pkg/protocgengogrpc"
-	"github.com/suyuan32/goctls/util/console"
+	"github.com/Tricitrus/goctls/pkg/env"
+	"github.com/Tricitrus/goctls/pkg/goswagger"
+	"github.com/Tricitrus/goctls/pkg/protoc"
+	"github.com/Tricitrus/goctls/pkg/protocgengo"
+	"github.com/Tricitrus/goctls/pkg/protocgengogrpc"
+	"github.com/Tricitrus/goctls/util/console"
 )
 
 type bin struct {

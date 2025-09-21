@@ -10,8 +10,8 @@ import (
 	"github.com/iancoleman/strcase"
 	"github.com/pkg/errors"
 
-	"github.com/suyuan32/goctls/util/console"
-	"github.com/suyuan32/goctls/util/pathx"
+	"github.com/Tricitrus/goctls/util/console"
+	"github.com/Tricitrus/goctls/util/pathx"
 )
 
 type GenContext struct {
@@ -97,7 +97,7 @@ func AppendToApiDesc(data, filePath string) error {
 	originString := string(file)
 
 	apiDescIndex := strings.Index(originString, "apiDesc")
-	//data = fmt.Sprintf("\n%s", data)
+	// data = fmt.Sprintf("\n%s", data)
 
 	var newString string
 	offset := 12

@@ -7,9 +7,9 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/Tricitrus/goctls/api/parser"
+	"github.com/Tricitrus/goctls/util/pathx"
 	"github.com/spf13/cobra"
-	"github.com/suyuan32/goctls/api/parser"
-	"github.com/suyuan32/goctls/util/pathx"
 )
 
 var (

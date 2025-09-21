@@ -3,8 +3,8 @@ package svc
 import (
 	{{.configImport}}
 	{{if .useI18n}}
-	"github.com/suyuan32/simple-admin-common/i18n"{{end}}{{if .useCoreRpc}}
-	"github.com/suyuan32/simple-admin-core/rpc/coreclient"{{end}}{{if .useEnt}}
+	"github.com/Tricitrus/tricitrus-admin-common/i18n"{{end}}{{if .useCoreRpc}}
+	"github.com/Tricitrus/tricitrus-admin-core/rpc/coreclient"{{end}}{{if .useEnt}}
 	"{{.projectPackage}}/ent"
 	_ "{{.projectPackage}}/ent/runtime"
 	"github.com/zeromicro/go-zero/core/logx"{{end}}

@@ -9,8 +9,8 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/suyuan32/goctls/util/pathx"
-	"github.com/suyuan32/goctls/vars"
+	"github.com/Tricitrus/goctls/util/pathx"
+	"github.com/Tricitrus/goctls/vars"
 )
 
 // RunFunc defines a function type of Run function

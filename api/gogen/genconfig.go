@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/suyuan32/goctls/api/spec"
-	"github.com/suyuan32/goctls/config"
-	"github.com/suyuan32/goctls/util/format"
+	"github.com/Tricitrus/goctls/api/spec"
+	"github.com/Tricitrus/goctls/config"
+	"github.com/Tricitrus/goctls/util/format"
 )
 
 const (

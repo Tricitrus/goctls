@@ -12,8 +12,8 @@ import (
 	"entgo.io/ent"
 	"entgo.io/ent/dialect"
 	"entgo.io/ent/schema/field"
+	uuid "github.com/Tricitrus/tricitrus-admin-common/utils/uuidx"
 	_ "github.com/lib/pq"
-	uuid "github.com/suyuan32/simple-admin-common/utils/uuidx"
 )
 
 // Postgres implements SchemaImporter for PostgreSQL databases.

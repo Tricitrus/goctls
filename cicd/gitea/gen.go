@@ -44,7 +44,7 @@ func Gen(_ *cobra.Command, _ []string) (err error) {
 
 	// validate
 	if VarStringRepository == "" || !strings.HasSuffix(VarStringRepository, ".git") {
-		return errors.New("wrong repository, please set repository by \"-r\", such as \"-r https://github.com/suyuan32/simple-admin-job.git\"  ")
+		return errors.New("wrong repository, please set repository by \"-r\", such as \"-r https://github.com/Tricitrus/tricitrus-admin-job.git\"  ")
 	}
 
 	color.Green.Println("Generating...")

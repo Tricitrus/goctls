@@ -3,7 +3,7 @@ package generator
 import (
 	"strings"
 
-	"github.com/suyuan32/goctls/rpc/parser"
+	"github.com/Tricitrus/goctls/rpc/parser"
 )
 
 func GetGroup(service parser.Service) (data []string) {
@@ -14,7 +14,7 @@ func GetGroup(service parser.Service) (data []string) {
 		}
 	}
 
-	for k, _ := range groupNames {
+	for k := range groupNames {
 		data = append(data, k)
 	}
 

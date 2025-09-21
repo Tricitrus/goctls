@@ -4,9 +4,9 @@ import (
 	"errors"
 	"fmt"
 
+	"github.com/Tricitrus/goctls/api/parser"
 	"github.com/gookit/color"
 	"github.com/spf13/cobra"
-	"github.com/suyuan32/goctls/api/parser"
 )
 
 // VarStringAPI describes an API.

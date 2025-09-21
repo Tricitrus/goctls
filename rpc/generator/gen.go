@@ -6,17 +6,17 @@ import (
 	"path/filepath"
 	"strings"
 
+	new2 "github.com/Tricitrus/goctls/api/new"
 	"github.com/duke-git/lancet/v2/fileutil"
-	new2 "github.com/suyuan32/goctls/api/new"
 
 	"github.com/gookit/color"
 
-	"github.com/suyuan32/goctls/rpc/execx"
-	proto2 "github.com/suyuan32/goctls/rpc/generator/proto"
-	"github.com/suyuan32/goctls/rpc/parser"
-	"github.com/suyuan32/goctls/util/console"
-	"github.com/suyuan32/goctls/util/ctx"
-	"github.com/suyuan32/goctls/util/pathx"
+	"github.com/Tricitrus/goctls/rpc/execx"
+	proto2 "github.com/Tricitrus/goctls/rpc/generator/proto"
+	"github.com/Tricitrus/goctls/rpc/parser"
+	"github.com/Tricitrus/goctls/util/console"
+	"github.com/Tricitrus/goctls/util/ctx"
+	"github.com/Tricitrus/goctls/util/pathx"
 )
 
 type ZRpcContext struct {
@@ -173,7 +173,6 @@ func (g *Generator) Generate(zctx *ZRpcContext) error {
 		}
 
 		_, err = execx.Run(makefileCmd, abs)
-
 		if err != nil {
 			return err
 		}

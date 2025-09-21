@@ -9,10 +9,10 @@ import (
 
 	"github.com/duke-git/lancet/v2/fileutil"
 
+	"github.com/Tricitrus/goctls/internal/cobrax"
+	"github.com/Tricitrus/goctls/util/ctx"
+	"github.com/Tricitrus/goctls/util/pathx"
 	"github.com/spf13/cobra"
-	"github.com/suyuan32/goctls/internal/cobrax"
-	"github.com/suyuan32/goctls/util/ctx"
-	"github.com/suyuan32/goctls/util/pathx"
 )
 
 var (
@@ -87,5 +87,5 @@ func generateGateway(*cobra.Command, []string) error {
 	}
 
 	mainFile := filepath.Join(path, "main.go")
-	return os.WriteFile(mainFile, []byte(mainContent), 0644)
+	return os.WriteFile(mainFile, []byte(mainContent), 0o644)
 }

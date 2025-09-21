@@ -1,7 +1,7 @@
 package config
 
 import (
-{{if .isEnt}}   "github.com/suyuan32/simple-admin-common/config"
+{{if .isEnt}}   "github.com/Tricitrus/tricitrus-admin-common/config"
 {{end}}
     "github.com/zeromicro/go-zero/zrpc"
 

@@ -22,7 +22,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/suyuan32/goctls/extra/i18n/api"
+	"github.com/Tricitrus/goctls/extra/i18n/api"
 )
 
 var (

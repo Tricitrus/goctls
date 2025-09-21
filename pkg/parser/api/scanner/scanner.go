@@ -9,8 +9,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/suyuan32/goctls/pkg/parser/api/token"
-	"github.com/suyuan32/goctls/util/pathx"
+	"github.com/Tricitrus/goctls/pkg/parser/api/token"
+	"github.com/Tricitrus/goctls/util/pathx"
 )
 
 const (
@@ -152,7 +152,7 @@ func (s *Scanner) peekRune() rune {
 
 func (s *Scanner) scanString(delim rune, tp token.Type) (token.Token, error) {
 	position := s.position
-	var stringMode = initMode
+	stringMode := initMode
 	for {
 		switch s.ch {
 		case delim:
@@ -300,7 +300,6 @@ func (s *Scanner) scanMicrosecond(bgPos int) token.Token {
 	}
 
 	return s.scanNanosecond(bgPos)
-
 }
 
 func (s *Scanner) scanMillisecondOrMinute(bgPos int) token.Token {
@@ -496,7 +495,7 @@ func (s *Scanner) scanLineComment() token.Token {
 
 func (s *Scanner) scanDocument() (token.Token, error) {
 	position := s.position
-	var documentMode = initMode
+	documentMode := initMode
 	for {
 		switch s.ch {
 		case '*':

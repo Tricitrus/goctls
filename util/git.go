@@ -8,8 +8,8 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/suyuan32/goctls/util/env"
-	"github.com/suyuan32/goctls/util/pathx"
+	"github.com/Tricitrus/goctls/util/env"
+	"github.com/Tricitrus/goctls/util/pathx"
 )
 
 func CloneIntoGitHome(url, branch string) (dir string, err error) {

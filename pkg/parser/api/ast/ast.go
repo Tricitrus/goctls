@@ -5,8 +5,8 @@ import (
 	"io"
 	"strings"
 
-	"github.com/suyuan32/goctls/pkg/parser/api/token"
-	"github.com/suyuan32/goctls/util"
+	"github.com/Tricitrus/goctls/pkg/parser/api/token"
+	"github.com/Tricitrus/goctls/util"
 )
 
 // Node represents a node in the AST.
@@ -133,7 +133,7 @@ func (t *TokenNode) Format(prefix ...string) string {
 		textList = append(textList, v.Format(p))
 	}
 
-	var tokenText = p + t.Token.Text
+	tokenText := p + t.Token.Text
 	var validLeadingCommentGroup CommentGroup
 	for _, e := range t.LeadingCommentGroup {
 		if util.IsEmptyStringOrWhiteSpace(e.Comment.Text) {

@@ -3,8 +3,8 @@ package token
 import (
 	"fmt"
 
-	"github.com/suyuan32/goctls/pkg/parser/api/placeholder"
-	"github.com/suyuan32/goctls/util"
+	"github.com/Tricitrus/goctls/pkg/parser/api/placeholder"
+	"github.com/Tricitrus/goctls/util"
 )
 
 const (

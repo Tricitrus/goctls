@@ -1,7 +1,7 @@
 {
   "goctls": {
-    "short": "一个基于 go zero 用于生成 Simple Admin 代码的 cli 工具",
-    "long": "\n      ___                       ___           ___           ___       ___     \n     /\\  \\          ___        /\\__\\         /\\  \\         /\\__\\     /\\  \\    \n    /::\\  \\        /\\  \\      /::|  |       /::\\  \\       /:/  /    /::\\  \\   \n   /:/\\ \\  \\       \\:\\  \\    /:|:|  |      /:/\\:\\  \\     /:/  /    /:/\\:\\  \\  \n  _\\:\\~\\ \\  \\      /::\\__\\  /:/|:|__|__   /::\\~\\:\\  \\   /:/  /    /::\\~\\:\\  \\ \n /\\ \\:\\ \\ \\__\\  __/:/\\/__/ /:/ |::::\\__\\ /:/\\:\\ \\:\\__\\ /:/__/    /:/\\:\\ \\:\\__\\\n \\:\\ \\:\\ \\/__/ /\\/:/  /    \\/__/~~/:/  / \\/__\\:\\/:/  / \\:\\  \\    \\:\\~\\:\\ \\/__/\n  \\:\\ \\:\\__\\   \\::/__/           /:/  /       \\::/  /   \\:\\  \\    \\:\\ \\:\\__\\  \n   \\:\\/:/  /    \\:\\__\\          /:/  /         \\/__/     \\:\\  \\    \\:\\ \\/__/  \n    \\::/  /      \\/__/         /:/  /                     \\:\\__\\    \\:\\__\\    \n     \\/__/                     \\/__/                       \\/__/     \\/__/    \n \n 一个用于生成 Simple Admin 的 api、zrpc、model 代码的 cli 工具\n\nGitHub: https://github.com/suyuan32/goctls\nSite:   https://doc.ryansu.tech/",
+    "short": "一个基于 go zero 用于生成 Tricitrus Admin 代码的 cli 工具",
+    "long": "\n      ___                       ___           ___           ___       ___     \n     /\\  \\          ___        /\\__\\         /\\  \\         /\\__\\     /\\  \\    \n    /::\\  \\        /\\  \\      /::|  |       /::\\  \\       /:/  /    /::\\  \\   \n   /:/\\ \\  \\       \\:\\  \\    /:|:|  |      /:/\\:\\  \\     /:/  /    /:/\\:\\  \\  \n  _\\:\\~\\ \\  \\      /::\\__\\  /:/|:|__|__   /::\\~\\:\\  \\   /:/  /    /::\\~\\:\\  \\ \n /\\ \\:\\ \\ \\__\\  __/:/\\/__/ /:/ |::::\\__\\ /:/\\:\\ \\:\\__\\ /:/__/    /:/\\:\\ \\:\\__\\\n \\:\\ \\:\\ \\/__/ /\\/:/  /    \\/__/~~/:/  / \\/__\\:\\/:/  / \\:\\  \\    \\:\\~\\:\\ \\/__/\n  \\:\\ \\:\\__\\   \\::/__/           /:/  /       \\::/  /   \\:\\  \\    \\:\\ \\:\\__\\  \n   \\:\\/:/  /    \\:\\__\\          /:/  /         \\/__/     \\:\\  \\    \\:\\ \\/__/  \n    \\::/  /      \\/__/         /:/  /                     \\:\\__\\    \\:\\__\\    \n     \\/__/                     \\/__/                       \\/__/     \\/__/    \n \n 一个用于生成 Tricitrus Admin 的 api、zrpc、model 代码的 cli 工具\n\nGitHub: https://github.com/Tricitrus/goctls\nSite:   https://doc.ryansu.tech/",
     "api": {
       "short": "生成与 api 相关的文件",
       "o": "输出 api 示例文件",
@@ -53,7 +53,7 @@
         "style": "{{.global.style}}",
         "casbin": "是否使用 Casbin",
         "i18n": "{{.global.i18n}}",
-        "module_name": "go.mod 中的模块名称，例如 github.com/suyuan32/simple-admin-core",
+        "module_name": "go.mod 中的模块名称，例如 github.com/Tricitrus/tricitrus-admin-core",
         "trans_err": "是否翻译错误",
         "port": "服务暴露的端口",
         "gitlab": "是否使用 gitlab CI/CD",
@@ -81,7 +81,7 @@
         "model": "用于生成的模型名称，和 schema 的 struct 名称一致，首字母大写，例如 User, 支持同时生成多个模型, 使用逗号分隔，如 User,Member",
         "search_key_num": "搜索条件的最大数量",
         "rpc_name": "RPC 服务名称，用于调用，例如 CoreRpc 需要配置为 Core",
-        "grpc_package": "存储 pb 文件的 rpc 包，例如 github.com/suyuan32/simple-admin-job/types/job",
+        "grpc_package": "存储 pb 文件的 rpc 包，例如 github.com/Tricitrus/tricitrus-admin-job/types/job",
         "multiple": "proto 是否包含多个服务",
         "json_style": "JSON 标记格式，默认为驼峰式",
         "import_prefix": "{{.global.import_prefix}}",
@@ -205,7 +205,7 @@
         "branch": "{{.global.branch}}",
         "verbose": "启用日志输出",
         "ent": "是否在项目中使用 Ent",
-        "module_name": "go.mod 中的模块名称，例如：github.com/suyuan32/simple-admin-core",
+        "module_name": "go.mod 中的模块名称，例如：github.com/Tricitrus/tricitrus-admin-core",
         "port": "服务公开的端口",
         "gitlab": "是否使用 gitlab-ci",
         "desc": "是否为拆分 proto 文件创建 desc 文件夹",
@@ -367,7 +367,7 @@
         "short": "生成 gitea 的 actions 文件, 用于构建 docker",
         "output_dir": "输出的目录，为项目根目录",
         "china": "服务器是否在中国",
-        "repository": "代码仓库的地址, 例如 \"https://github.com/suyuan32/simple-admin-job.git\""
+        "repository": "代码仓库的地址, 例如 \"https://github.com/Tricitrus/tricitrus-admin-job.git\""
       }
     },
     "template": {
@@ -408,7 +408,7 @@
       "short": "生成与前端相关的文件",
       "vben": {
         "short": "生成与前端相关的文件",
-        "output": "输出目录，应该是Simple Admin Backend UI 的根目录",
+        "output": "输出目录，应该是Tricitrus Admin Backend UI 的根目录",
         "api_file": "API 文件的绝对路径",
         "folder_name": "在不同目录中生成文件的文件夹名称。例如，存储文件管理器服务文件的简单管理后台 UI 中的文件夹名称",
         "sub_folder": "子目录名称。例如，src/views/sys 子目录用户，路径为 src/views/sys/user",

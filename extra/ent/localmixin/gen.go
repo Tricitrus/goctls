@@ -24,15 +24,15 @@ import (
 
 	"github.com/duke-git/lancet/v2/fileutil"
 
-	"github.com/suyuan32/goctls/util/ctx"
+	"github.com/Tricitrus/goctls/util/ctx"
 
 	"github.com/gookit/color"
 	"github.com/jedib0t/go-pretty/v6/table"
 	"github.com/spf13/cobra"
 
-	"github.com/suyuan32/goctls/util/console"
-	"github.com/suyuan32/goctls/util/env"
-	"github.com/suyuan32/goctls/util/pathx"
+	"github.com/Tricitrus/goctls/util/console"
+	"github.com/Tricitrus/goctls/util/env"
+	"github.com/Tricitrus/goctls/util/pathx"
 )
 
 var (
@@ -112,7 +112,7 @@ func GenLocalMixin(_ *cobra.Command, _ []string) error {
 			}
 		}
 
-		//execx.Run("go get -u entgo.io/ent@latest", entDir)
+		// execx.Run("go get -u entgo.io/ent@latest", entDir)
 	}
 
 	if VarStringAdd != "" {

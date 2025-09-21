@@ -8,27 +8,27 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/suyuan32/goctls/cicd"
-	"github.com/suyuan32/goctls/config"
-	"github.com/suyuan32/goctls/project"
-	"github.com/suyuan32/goctls/upgrade"
+	"github.com/Tricitrus/goctls/cicd"
+	"github.com/Tricitrus/goctls/config"
+	"github.com/Tricitrus/goctls/project"
+	"github.com/Tricitrus/goctls/upgrade"
 
 	"github.com/gookit/color"
 	"github.com/spf13/cobra"
 	cobracompletefig "github.com/withfig/autocomplete-tools/integrations/cobra"
 
-	"github.com/suyuan32/goctls/api"
-	"github.com/suyuan32/goctls/docker"
-	"github.com/suyuan32/goctls/env"
-	"github.com/suyuan32/goctls/extra"
-	"github.com/suyuan32/goctls/frontend"
-	"github.com/suyuan32/goctls/gateway"
-	"github.com/suyuan32/goctls/info"
-	"github.com/suyuan32/goctls/internal/cobrax"
-	"github.com/suyuan32/goctls/internal/version"
-	"github.com/suyuan32/goctls/kube"
-	"github.com/suyuan32/goctls/rpc"
-	"github.com/suyuan32/goctls/tpl"
+	"github.com/Tricitrus/goctls/api"
+	"github.com/Tricitrus/goctls/docker"
+	"github.com/Tricitrus/goctls/env"
+	"github.com/Tricitrus/goctls/extra"
+	"github.com/Tricitrus/goctls/frontend"
+	"github.com/Tricitrus/goctls/gateway"
+	"github.com/Tricitrus/goctls/info"
+	"github.com/Tricitrus/goctls/internal/cobrax"
+	"github.com/Tricitrus/goctls/internal/version"
+	"github.com/Tricitrus/goctls/kube"
+	"github.com/Tricitrus/goctls/rpc"
+	"github.com/Tricitrus/goctls/tpl"
 )
 
 const (
@@ -112,7 +112,7 @@ func init() {
 	})
 
 	rootCmd.Version = fmt.Sprintf(
-		"%s %s/%s - Go Zero %s - Simple Admin Tools %s - Core %s - Common Lib %s ", version.BuildVersion,
+		"%s %s/%s - Go Zero %s - Tricitrus Admin Tools %s - Core %s - Common Lib %s ", version.BuildVersion,
 		runtime.GOOS, runtime.GOARCH, config.DefaultGoZeroVersion, config.DefaultToolVersion, config.CoreVersion, config.CommonVersion)
 
 	rootCmd.SetUsageTemplate(usageTpl)

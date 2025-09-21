@@ -10,9 +10,9 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/Tricitrus/goctls/rpc/execx"
+	"github.com/Tricitrus/goctls/util/pathx"
 	"github.com/stretchr/testify/assert"
-	"github.com/suyuan32/goctls/rpc/execx"
-	"github.com/suyuan32/goctls/util/pathx"
 	"github.com/zeromicro/go-zero/core/stringx"
 )
 
@@ -194,7 +194,6 @@ func TestDecodePackages(t *testing.T) {
 			}
 			if !reflect.DeepEqual(result, tt.want) {
 				t.Errorf("decodePackages() = %v,want  %v", result, tt.want)
-
 			}
 		})
 	}

@@ -4,11 +4,11 @@ import (
 	"path/filepath"
 	"strings"
 
-	conf "github.com/suyuan32/goctls/config"
-	"github.com/suyuan32/goctls/rpc/parser"
-	"github.com/suyuan32/goctls/util/ctx"
-	"github.com/suyuan32/goctls/util/pathx"
-	"github.com/suyuan32/goctls/util/stringx"
+	conf "github.com/Tricitrus/goctls/config"
+	"github.com/Tricitrus/goctls/rpc/parser"
+	"github.com/Tricitrus/goctls/util/ctx"
+	"github.com/Tricitrus/goctls/util/pathx"
+	"github.com/Tricitrus/goctls/util/stringx"
 )
 
 const (
@@ -57,7 +57,8 @@ type (
 )
 
 func mkdir(ctx *ctx.ProjectContext, proto parser.Proto, conf *conf.Config, c *ZRpcContext) (DirContext,
-	error) {
+	error,
+) {
 	inner := make(map[string]Dir)
 	etcDir := filepath.Join(ctx.WorkDir, "etc")
 	clientDir := filepath.Join(ctx.WorkDir, "client")

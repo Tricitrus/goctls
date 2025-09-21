@@ -10,14 +10,14 @@ import (
 
 	"github.com/casbin/casbin/v2"
 	"github.com/redis/go-redis/v9"
-	"github.com/suyuan32/simple-admin-common/orm/ent/entctx/tenantctx"
+	"github.com/Tricitrus/tricitrus-admin-common/orm/ent/entctx/tenantctx"
 	"github.com/zeromicro/go-zero/core/errorx"
 	"github.com/zeromicro/go-zero/core/logx"
 	"github.com/zeromicro/go-zero/rest/enum"
 	"github.com/zeromicro/go-zero/rest/httpx"
 
-	"github.com/suyuan32/simple-admin-common/config"
-	"github.com/suyuan32/simple-admin-common/utils/jwt"
+	"github.com/Tricitrus/tricitrus-admin-common/config"
+	"github.com/Tricitrus/tricitrus-admin-common/utils/jwt"
 )
 
 type AuthorityMiddleware struct {

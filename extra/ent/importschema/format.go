@@ -10,10 +10,10 @@ import (
 	"github.com/duke-git/lancet/v2/strutil"
 	"github.com/gookit/color"
 
-	"github.com/suyuan32/goctls/rpc/execx"
+	"github.com/Tricitrus/goctls/rpc/execx"
 )
 
-// FormatFile formats the file to adjust simple admin
+// FormatFile formats the file to adjust tricitrus admin
 func FormatFile(ctx *GenContext) error {
 	files, err := fileutil.ListFileNames(ctx.OutputDir)
 	if err != nil {

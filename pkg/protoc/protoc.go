@@ -8,12 +8,12 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/suyuan32/goctls/pkg/downloader"
-	"github.com/suyuan32/goctls/pkg/goctl"
-	"github.com/suyuan32/goctls/rpc/execx"
-	"github.com/suyuan32/goctls/util/env"
-	"github.com/suyuan32/goctls/util/zipx"
-	"github.com/suyuan32/goctls/vars"
+	"github.com/Tricitrus/goctls/pkg/downloader"
+	"github.com/Tricitrus/goctls/pkg/goctl"
+	"github.com/Tricitrus/goctls/rpc/execx"
+	"github.com/Tricitrus/goctls/util/env"
+	"github.com/Tricitrus/goctls/util/zipx"
+	"github.com/Tricitrus/goctls/vars"
 )
 
 var url = map[string]string{

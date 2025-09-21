@@ -24,9 +24,9 @@ import (
 	"github.com/iancoleman/strcase"
 	"github.com/spf13/cobra"
 
-	"github.com/suyuan32/goctls/api/parser"
-	"github.com/suyuan32/goctls/api/spec"
-	"github.com/suyuan32/goctls/util/pathx"
+	"github.com/Tricitrus/goctls/api/parser"
+	"github.com/Tricitrus/goctls/api/spec"
+	"github.com/Tricitrus/goctls/util/pathx"
 )
 
 var (
@@ -80,7 +80,7 @@ func (g GenContext) Validate() error {
 	return nil
 }
 
-// GenCRUDLogic is used to generate CRUD file for simple admin backend UI
+// GenCRUDLogic is used to generate CRUD file for tricitrus admin backend UI
 func GenCRUDLogic(_ *cobra.Command, _ []string) error {
 	outputDir, err := filepath.Abs(VarStringOutput)
 	if err != nil {

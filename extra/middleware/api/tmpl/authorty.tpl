@@ -12,8 +12,8 @@ import (
 	"github.com/zeromicro/go-zero/rest/httpx"
 	"github.com/redis/go-redis/v9"
 
-	"github.com/suyuan32/simple-admin-common/config"
-	"github.com/suyuan32/simple-admin-common/utils/jwt"
+	"github.com/Tricitrus/tricitrus-admin-common/config"
+	"github.com/Tricitrus/tricitrus-admin-common/utils/jwt"
 )
 
 type AuthorityMiddleware struct {

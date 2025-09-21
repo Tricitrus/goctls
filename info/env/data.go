@@ -21,11 +21,13 @@ import (
 	"github.com/gookit/color"
 	"github.com/jedib0t/go-pretty/v6/table"
 
-	"github.com/suyuan32/goctls/util/env"
+	"github.com/Tricitrus/goctls/util/env"
 )
 
-var envInfo table.Writer
-var lang = env.IsChinaEnv()
+var (
+	envInfo table.Writer
+	lang    = env.IsChinaEnv()
+)
 
 // toolEnvInfo show the tools env variables usage by goctls
 func toolEnvInfo() string {

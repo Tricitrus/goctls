@@ -3,8 +3,8 @@ package parser
 import (
 	"fmt"
 
-	"github.com/suyuan32/goctls/pkg/parser/api/ast"
-	"github.com/suyuan32/goctls/pkg/parser/api/token"
+	"github.com/Tricitrus/goctls/pkg/parser/api/ast"
+	"github.com/Tricitrus/goctls/pkg/parser/api/token"
 )
 
 type filterBuilder struct {
@@ -63,7 +63,7 @@ func (f *filter) error() error {
 	if len(f.builders) == 0 {
 		return nil
 	}
-	var errorManager = newErrorManager()
+	errorManager := newErrorManager()
 	for _, b := range f.builders {
 		errorManager.add(b.error())
 	}

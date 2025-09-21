@@ -20,12 +20,12 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// ShowPort is used to show port usages across the simple admin.
+// ShowPort is used to show port usages across the tricitrus admin.
 func ShowPort(_ *cobra.Command, _ []string) error {
 	if lang {
-		color.Green.Println("Simple Admin的端口使用情况")
+		color.Green.Println("Tricitrus Admin的端口使用情况")
 	} else {
-		color.Green.Println("Simple Admin's port usage")
+		color.Green.Println("Tricitrus Admin's port usage")
 	}
 	portInfo()
 	return nil

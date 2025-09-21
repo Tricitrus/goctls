@@ -7,8 +7,8 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	"github.com/suyuan32/goctls/pkg/parser/api/token"
-	"github.com/suyuan32/goctls/util"
+	"github.com/Tricitrus/goctls/pkg/parser/api/token"
+	"github.com/Tricitrus/goctls/util"
 )
 
 const (
@@ -21,7 +21,7 @@ const (
 const (
 	_ WriteMode = 1 << iota
 	// ModeAuto is the default mode, which will automatically
-	//determine whether to write a newline.
+	// determine whether to write a newline.
 	ModeAuto
 
 	// ModeExpectInSameLine will write in the same line.
@@ -38,13 +38,15 @@ type option struct {
 	rawText bool
 }
 
-type tokenNodeOption func(o *tokenNodeOpt)
-type tokenNodeOpt struct {
-	prefix               string
-	infix                string
-	ignoreHeadComment    bool
-	ignoreLeadingComment bool
-}
+type (
+	tokenNodeOption func(o *tokenNodeOpt)
+	tokenNodeOpt    struct {
+		prefix               string
+		infix                string
+		ignoreHeadComment    bool
+		ignoreLeadingComment bool
+	}
+)
 
 // WriteMode is the mode of writing.
 type WriteMode int
@@ -61,7 +63,7 @@ func transfer2TokenNode(node Node, isChild bool, opt ...tokenNodeOption) *TokenN
 		o(option)
 	}
 
-	var copyOpt = append([]tokenNodeOption(nil), opt...)
+	copyOpt := append([]tokenNodeOption(nil), opt...)
 	var tn *TokenNode
 	switch val := node.(type) {
 	case *AnyDataType:
@@ -172,7 +174,7 @@ func transfer2TokenNode(node Node, isChild bool, opt ...tokenNodeOption) *TokenN
 
 func transferNilInfixNode(nodes []*TokenNode, opt ...tokenNodeOption) *TokenNode {
 	result := &TokenNode{}
-	var option = new(tokenNodeOpt)
+	option := new(tokenNodeOpt)
 	for _, o := range opt {
 		o(option)
 	}
@@ -199,7 +201,7 @@ func transferNilInfixNode(nodes []*TokenNode, opt ...tokenNodeOption) *TokenNode
 
 func transferTokenNode(node *TokenNode, opt ...tokenNodeOption) *TokenNode {
 	result := &TokenNode{}
-	var option = new(tokenNodeOpt)
+	option := new(tokenNodeOpt)
 	for _, o := range opt {
 		o(option)
 	}
@@ -249,8 +251,8 @@ func withTokenNodePrefix(prefix ...string) tokenNodeOption {
 			o.prefix = p
 		}
 	}
-
 }
+
 func withTokenNodeInfix(infix string) tokenNodeOption {
 	return func(o *tokenNodeOpt) {
 		o.infix = infix
@@ -344,7 +346,7 @@ func (w *Writer) Write(opts ...Option) {
 		return
 	}
 
-	var opt = new(option)
+	opt := new(option)
 	opt.mode = ModeAuto
 	opt.prefix = NilIndent
 	opt.infix = WhiteSpace

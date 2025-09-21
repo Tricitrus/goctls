@@ -7,9 +7,9 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/suyuan32/goctls/pkg/parser/api/ast"
-	"github.com/suyuan32/goctls/pkg/parser/api/scanner"
-	"github.com/suyuan32/goctls/pkg/parser/api/token"
+	"github.com/Tricitrus/goctls/pkg/parser/api/ast"
+	"github.com/Tricitrus/goctls/pkg/parser/api/scanner"
+	"github.com/Tricitrus/goctls/pkg/parser/api/token"
 )
 
 const (
@@ -101,7 +101,7 @@ func (p *Parser) parseStmt() ast.Stmt {
 }
 
 func (p *Parser) parseService() *ast.ServiceStmt {
-	var stmt = &ast.ServiceStmt{}
+	stmt := &ast.ServiceStmt{}
 	if p.curTokenIs(token.AT_SERVER) {
 		atServerStmt := p.parseAtServerStmt()
 		if atServerStmt == nil {
@@ -153,7 +153,7 @@ func (p *Parser) parseService() *ast.ServiceStmt {
 }
 
 func (p *Parser) parseServiceItemsStmt() []*ast.ServiceItemStmt {
-	var stmt = make([]*ast.ServiceItemStmt, 0)
+	stmt := make([]*ast.ServiceItemStmt, 0)
 	for p.curTokenIsNotEof() && p.peekTokenIsNot(token.RBRACE) {
 		item := p.parseServiceItemStmt()
 		if item == nil {
@@ -174,7 +174,7 @@ func (p *Parser) parseServiceItemsStmt() []*ast.ServiceItemStmt {
 }
 
 func (p *Parser) parseServiceItemStmt() *ast.ServiceItemStmt {
-	var stmt = &ast.ServiceItemStmt{}
+	stmt := &ast.ServiceItemStmt{}
 	// statement @doc
 	if p.peekTokenIs(token.AT_DOC) {
 		if !p.nextToken() {
@@ -217,7 +217,7 @@ func (p *Parser) parseServiceItemStmt() *ast.ServiceItemStmt {
 }
 
 func (p *Parser) parseRouteStmt() *ast.RouteStmt {
-	var stmt = &ast.RouteStmt{}
+	stmt := &ast.RouteStmt{}
 	// token http method
 	if !p.advanceIfPeekTokenIs(token.HttpMethods...) {
 		return nil
@@ -283,7 +283,7 @@ func (p *Parser) parseRouteStmt() *ast.RouteStmt {
 }
 
 func (p *Parser) parseBodyStmt() *ast.BodyStmt {
-	var stmt = &ast.BodyStmt{}
+	stmt := &ast.BodyStmt{}
 	// token '('
 	if !p.advanceIfPeekTokenIs(token.LPAREN) {
 		return nil
@@ -318,7 +318,7 @@ func (p *Parser) parseBodyStmt() *ast.BodyStmt {
 }
 
 func (p *Parser) parseBodyExpr() *ast.BodyExpr {
-	var expr = &ast.BodyExpr{}
+	expr := &ast.BodyExpr{}
 	switch {
 	case p.peekTokenIs(token.LBRACK): // token '['
 		if !p.nextToken() {
@@ -384,7 +384,7 @@ func (p *Parser) parseBodyExpr() *ast.BodyExpr {
 }
 
 func (p *Parser) parsePathExpr() *ast.PathExpr {
-	var expr = &ast.PathExpr{}
+	expr := &ast.PathExpr{}
 
 	var values []token.Token
 	for p.curTokenIsNotEof() &&
@@ -485,8 +485,8 @@ func (p *Parser) parsePathItem() []token.Token {
 }
 
 func (p *Parser) parseServiceNameExpr() *ast.ServiceNameExpr {
-	var expr = &ast.ServiceNameExpr{}
-	var text = p.curTok.Text
+	expr := &ast.ServiceNameExpr{}
+	text := p.curTok.Text
 
 	pos := p.curTok.Position
 	if p.peekTokenIs(token.SUB) {
@@ -530,7 +530,7 @@ func (p *Parser) parseAtDocStmt() ast.AtDocStmt {
 }
 
 func (p *Parser) parseAtDocGroupStmt() ast.AtDocStmt {
-	var stmt = &ast.AtDocGroupStmt{}
+	stmt := &ast.AtDocGroupStmt{}
 	stmt.AtDoc = p.curTokenNode()
 
 	// token '('
@@ -563,7 +563,7 @@ func (p *Parser) parseAtDocGroupStmt() ast.AtDocStmt {
 }
 
 func (p *Parser) parseAtDocLiteralStmt() ast.AtDocStmt {
-	var stmt = &ast.AtDocLiteralStmt{}
+	stmt := &ast.AtDocLiteralStmt{}
 	stmt.AtDoc = p.curTokenNode()
 
 	if !p.advanceIfPeekTokenIs(token.STRING) {
@@ -576,7 +576,7 @@ func (p *Parser) parseAtDocLiteralStmt() ast.AtDocStmt {
 }
 
 func (p *Parser) parseAtHandlerStmt() *ast.AtHandlerStmt {
-	var stmt = &ast.AtHandlerStmt{}
+	stmt := &ast.AtHandlerStmt{}
 	stmt.AtHandler = p.curTokenNode()
 
 	// token IDENT
@@ -590,7 +590,7 @@ func (p *Parser) parseAtHandlerStmt() *ast.AtHandlerStmt {
 }
 
 func (p *Parser) parseAtServerStmt() *ast.AtServerStmt {
-	var stmt = &ast.AtServerStmt{}
+	stmt := &ast.AtServerStmt{}
 	stmt.AtServer = p.curTokenNode()
 
 	// token '('
@@ -635,7 +635,7 @@ func (p *Parser) parseTypeStmt() ast.TypeStmt {
 }
 
 func (p *Parser) parseTypeLiteralStmt() ast.TypeStmt {
-	var stmt = &ast.TypeLiteralStmt{}
+	stmt := &ast.TypeLiteralStmt{}
 	stmt.Type = p.curTokenNode()
 
 	expr := p.parseTypeExpr()
@@ -649,7 +649,7 @@ func (p *Parser) parseTypeLiteralStmt() ast.TypeStmt {
 }
 
 func (p *Parser) parseTypeGroupStmt() ast.TypeStmt {
-	var stmt = &ast.TypeGroupStmt{}
+	stmt := &ast.TypeGroupStmt{}
 	stmt.Type = p.curTokenNode()
 
 	// token '('
@@ -681,7 +681,7 @@ func (p *Parser) parseTypeExprList() []*ast.TypeExpr {
 		return nil
 	}
 
-	var exprList = make([]*ast.TypeExpr, 0)
+	exprList := make([]*ast.TypeExpr, 0)
 	for p.curTokenIsNotEof() && p.peekTokenIsNot(token.RPAREN, token.EOF) {
 		expr := p.parseTypeExpr()
 		if expr == nil {
@@ -698,7 +698,7 @@ func (p *Parser) parseTypeExprList() []*ast.TypeExpr {
 }
 
 func (p *Parser) parseTypeExpr() *ast.TypeExpr {
-	var expr = &ast.TypeExpr{}
+	expr := &ast.TypeExpr{}
 	// token IDENT
 	if !p.advanceIfPeekTokenIs(token.IDENT) {
 		return nil
@@ -774,8 +774,9 @@ func (p *Parser) parseDataType() ast.DataType {
 		return nil
 	}
 }
+
 func (p *Parser) parseStructDataType() *ast.StructDataType {
-	var tp = &ast.StructDataType{}
+	tp := &ast.StructDataType{}
 	if !p.nextToken() {
 		return nil
 	}
@@ -804,7 +805,7 @@ func (p *Parser) parseStructDataType() *ast.StructDataType {
 }
 
 func (p *Parser) parseElemExprList() ast.ElemExprList {
-	var list = make(ast.ElemExprList, 0)
+	list := make(ast.ElemExprList, 0)
 	for p.curTokenIsNotEof() && p.peekTokenIsNot(token.RBRACE, token.EOF) {
 		if p.notExpectPeekToken(token.IDENT, token.MUL, token.RBRACE) {
 			return nil
@@ -825,7 +826,7 @@ func (p *Parser) parseElemExprList() ast.ElemExprList {
 }
 
 func (p *Parser) parseElemExpr() *ast.ElemExpr {
-	var expr = &ast.ElemExpr{}
+	expr := &ast.ElemExpr{}
 	if !p.advanceIfPeekTokenIs(token.IDENT, token.MUL) {
 		return nil
 	}
@@ -903,7 +904,7 @@ func (p *Parser) parseElemExpr() *ast.ElemExpr {
 }
 
 func (p *Parser) parseAnyDataType() *ast.AnyDataType {
-	var tp = &ast.AnyDataType{}
+	tp := &ast.AnyDataType{}
 	if !p.nextToken() {
 		return nil
 	}
@@ -914,7 +915,7 @@ func (p *Parser) parseAnyDataType() *ast.AnyDataType {
 }
 
 func (p *Parser) parsePointerDataType() *ast.PointerDataType {
-	var tp = &ast.PointerDataType{}
+	tp := &ast.PointerDataType{}
 	if !p.nextToken() {
 		return nil
 	}
@@ -937,7 +938,7 @@ func (p *Parser) parsePointerDataType() *ast.PointerDataType {
 }
 
 func (p *Parser) parseInterfaceDataType() *ast.InterfaceDataType {
-	var tp = &ast.InterfaceDataType{}
+	tp := &ast.InterfaceDataType{}
 	if !p.nextToken() {
 		return nil
 	}
@@ -948,7 +949,7 @@ func (p *Parser) parseInterfaceDataType() *ast.InterfaceDataType {
 }
 
 func (p *Parser) parseMapDataType() *ast.MapDataType {
-	var tp = &ast.MapDataType{}
+	tp := &ast.MapDataType{}
 	if !p.nextToken() {
 		return nil
 	}
@@ -989,7 +990,7 @@ func (p *Parser) parseMapDataType() *ast.MapDataType {
 }
 
 func (p *Parser) parseArrayDataType() *ast.ArrayDataType {
-	var tp = &ast.ArrayDataType{}
+	tp := &ast.ArrayDataType{}
 	tp.LBrack = p.curTokenNode()
 
 	// token INT | ELLIPSIS
@@ -1018,7 +1019,7 @@ func (p *Parser) parseArrayDataType() *ast.ArrayDataType {
 }
 
 func (p *Parser) parseSliceDataType() *ast.SliceDataType {
-	var tp = &ast.SliceDataType{}
+	tp := &ast.SliceDataType{}
 	tp.LBrack = p.curTokenNode()
 
 	// token ']'
@@ -1052,7 +1053,7 @@ func (p *Parser) parseImportStmt() ast.ImportStmt {
 }
 
 func (p *Parser) parseImportLiteralStmt() ast.ImportStmt {
-	var stmt = &ast.ImportLiteralStmt{}
+	stmt := &ast.ImportLiteralStmt{}
 	stmt.Import = p.curTokenNode()
 
 	// token STRING
@@ -1066,7 +1067,7 @@ func (p *Parser) parseImportLiteralStmt() ast.ImportStmt {
 }
 
 func (p *Parser) parseImportGroupStmt() ast.ImportStmt {
-	var stmt = &ast.ImportGroupStmt{}
+	stmt := &ast.ImportGroupStmt{}
 	stmt.Import = p.curTokenNode()
 
 	// token '('
@@ -1100,7 +1101,7 @@ func (p *Parser) parseImportGroupStmt() ast.ImportStmt {
 }
 
 func (p *Parser) parseInfoStmt() *ast.InfoStmt {
-	var stmt = &ast.InfoStmt{}
+	stmt := &ast.InfoStmt{}
 	stmt.Info = p.curTokenNode()
 
 	// token '('
@@ -1133,7 +1134,7 @@ func (p *Parser) parseInfoStmt() *ast.InfoStmt {
 }
 
 func (p *Parser) parseAtServerKVExpression() *ast.KVExpr {
-	var expr = &ast.KVExpr{}
+	expr := &ast.KVExpr{}
 
 	// token IDENT
 	if !p.advanceIfPeekTokenIs(token.KEY, token.RPAREN) {
@@ -1154,7 +1155,7 @@ func (p *Parser) parseAtServerKVExpression() *ast.KVExpr {
 		}
 
 		slashTok := p.curTok
-		var pathText = slashTok.Text
+		pathText := slashTok.Text
 		if !p.advanceIfPeekTokenIs(token.IDENT) {
 			return nil
 		}
@@ -1290,7 +1291,7 @@ func (p *Parser) parseAtServerKVExpression() *ast.KVExpr {
 			}
 
 			slashTok := p.curTok
-			var pathText = valueTok.Text
+			pathText := valueTok.Text
 			pathText += slashTok.Text
 			if !p.advanceIfPeekTokenIs(token.IDENT) {
 				return nil
@@ -1329,7 +1330,7 @@ func (p *Parser) parseAtServerKVExpression() *ast.KVExpr {
 }
 
 func (p *Parser) parseKVExpression() *ast.KVExpr {
-	var expr = &ast.KVExpr{}
+	expr := &ast.KVExpr{}
 
 	// token IDENT
 	if !p.advanceIfPeekTokenIs(token.KEY) {
@@ -1350,7 +1351,7 @@ func (p *Parser) parseKVExpression() *ast.KVExpr {
 
 // syntax = "v1"
 func (p *Parser) parseSyntaxStmt() *ast.SyntaxStmt {
-	var stmt = &ast.SyntaxStmt{}
+	stmt := &ast.SyntaxStmt{}
 	stmt.Syntax = p.curTokenNode()
 
 	// token '='
@@ -1577,7 +1578,7 @@ func (p *Parser) init() bool {
 func (p *Parser) nextToken() bool {
 	var err error
 	p.curTok = p.peekTok
-	var line = -1
+	line := -1
 	if p.curTok.Valid() {
 		if p.curTokenIs(token.EOF) {
 			for _, v := range p.headCommentGroup {

@@ -1,13 +1,12 @@
-module github.com/suyuan32/goctls
+module github.com/Tricitrus/goctls
 
-go 1.24.0
-
-toolchain go1.24.2
+go 1.25.0
 
 require (
 	ariga.io/atlas v0.36.1
 	entgo.io/contrib v0.7.0
 	entgo.io/ent v0.14.5
+	github.com/Tricitrus/tricitrus-admin-common v1.7.1
 	github.com/duke-git/lancet/v2 v2.3.7
 	github.com/emicklei/proto v1.14.2
 	github.com/fatih/structtag v1.2.0
@@ -20,12 +19,11 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cobra v1.9.1
 	github.com/spf13/pflag v1.0.7
-	github.com/stretchr/testify v1.10.0
-	github.com/suyuan32/simple-admin-common v1.7.0
+	github.com/stretchr/testify v1.11.1
 	github.com/withfig/autocomplete-tools/integrations/cobra v1.2.1
 	github.com/zeromicro/antlr v0.0.1
 	github.com/zeromicro/go-zero v1.9.0
-	golang.org/x/text v0.28.0
+	golang.org/x/text v0.29.0
 )
 
 require (
@@ -60,10 +58,10 @@ require (
 	go.uber.org/automaxprocs v1.6.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/exp v0.0.0-20250408133849-7e4ce0ab07d0 // indirect
-	golang.org/x/mod v0.26.0 // indirect
-	golang.org/x/sync v0.16.0 // indirect
-	golang.org/x/sys v0.35.0 // indirect
-	golang.org/x/tools v0.35.0 // indirect
+	golang.org/x/mod v0.27.0 // indirect
+	golang.org/x/sync v0.17.0 // indirect
+	golang.org/x/sys v0.36.0 // indirect
+	golang.org/x/tools v0.36.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20250728155136-f173205681a0 // indirect
 	google.golang.org/protobuf v1.36.6 // indirect
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect

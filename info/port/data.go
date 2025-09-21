@@ -21,20 +21,21 @@ import (
 	"github.com/gookit/color"
 	"github.com/jedib0t/go-pretty/v6/table"
 
-	"github.com/suyuan32/goctls/util/env"
+	"github.com/Tricitrus/goctls/util/env"
 )
 
-var envInfo table.Writer
-var lang = env.IsChinaEnv()
+var (
+	envInfo table.Writer
+	lang    = env.IsChinaEnv()
+)
 
-// portInfo show the port usage across the simple admin
+// portInfo show the port usage across the tricitrus admin
 func portInfo() string {
 	color.Green.Println("PORT")
 	envInfo = table.NewWriter()
 	envInfo.SetOutputMirror(os.Stdout)
 	if lang {
 		envInfo.AppendHeader(table.Row{"端口", "服务"})
-
 	} else {
 		envInfo.AppendHeader(table.Row{"Port", "Service"})
 	}

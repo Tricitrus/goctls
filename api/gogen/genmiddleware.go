@@ -7,9 +7,9 @@ import (
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
 
-	"github.com/suyuan32/goctls/api/spec"
-	"github.com/suyuan32/goctls/config"
-	"github.com/suyuan32/goctls/util/format"
+	"github.com/Tricitrus/goctls/api/spec"
+	"github.com/Tricitrus/goctls/config"
+	"github.com/Tricitrus/goctls/util/format"
 )
 
 //go:embed middleware.tpl

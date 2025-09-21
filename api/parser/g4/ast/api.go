@@ -5,7 +5,7 @@ import (
 	"path"
 	"sort"
 
-	"github.com/suyuan32/goctls/api/parser/g4/gen/api"
+	"github.com/Tricitrus/goctls/api/parser/g4/gen/api"
 )
 
 const (

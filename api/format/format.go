@@ -15,11 +15,11 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/zeromicro/go-zero/core/errorx"
 
-	"github.com/suyuan32/goctls/api/parser"
-	"github.com/suyuan32/goctls/api/util"
-	"github.com/suyuan32/goctls/pkg/env"
-	apiF "github.com/suyuan32/goctls/pkg/parser/api/format"
-	"github.com/suyuan32/goctls/util/pathx"
+	"github.com/Tricitrus/goctls/api/parser"
+	"github.com/Tricitrus/goctls/api/util"
+	"github.com/Tricitrus/goctls/pkg/env"
+	apiF "github.com/Tricitrus/goctls/pkg/parser/api/format"
+	"github.com/Tricitrus/goctls/util/pathx"
 )
 
 const (

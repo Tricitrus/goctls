@@ -20,13 +20,13 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/suyuan32/goctls/rpc/execx"
-	"github.com/suyuan32/goctls/util/ctx"
+	"github.com/Tricitrus/goctls/rpc/execx"
+	"github.com/Tricitrus/goctls/util/ctx"
 )
 
 const (
 	goZeroMod = "github.com/zeromicro/go-zero"
-	adminTool = "github.com/suyuan32/simple-admin-tools"
+	adminTool = "github.com/Tricitrus/tricitrus-admin-tools"
 )
 
 var errInvalidGoMod = errors.New("it's only working for go module")

@@ -23,8 +23,8 @@ import (
 
 	"github.com/duke-git/lancet/v2/fileutil"
 
-	"github.com/suyuan32/goctls/config"
-	"github.com/suyuan32/goctls/rpc/execx"
+	"github.com/Tricitrus/goctls/config"
+	"github.com/Tricitrus/goctls/rpc/execx"
 )
 
 func upgradeDependencies(workDir string) error {
@@ -59,10 +59,10 @@ func upgradeOfficialDependencies(data, workDir string) (err error) {
 		Repo string
 	}{
 		{
-			Repo: "github.com/suyuan32/simple-admin-common",
+			Repo: "github.com/Tricitrus/tricitrus-admin-common",
 		},
 		{
-			Repo: "github.com/suyuan32/simple-admin-core",
+			Repo: "github.com/Tricitrus/tricitrus-admin-core",
 		},
 	}
 

@@ -19,16 +19,14 @@ import (
 	"errors"
 	"os"
 
+	conf "github.com/Tricitrus/goctls/config"
+	"github.com/Tricitrus/goctls/rpc/execx"
 	"github.com/gookit/color"
 	"github.com/spf13/cobra"
-	conf "github.com/suyuan32/goctls/config"
-	"github.com/suyuan32/goctls/rpc/execx"
 )
 
-var (
-	// VarBoolUpgradeMakefile describe whether to upgrade makefile
-	VarBoolUpgradeMakefile bool
-)
+// VarBoolUpgradeMakefile describe whether to upgrade makefile
+var VarBoolUpgradeMakefile bool
 
 func UpgradeProject(_ *cobra.Command, _ []string) error {
 	color.Green.Println("Start upgrading dependencies...")

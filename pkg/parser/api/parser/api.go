@@ -7,10 +7,10 @@ import (
 
 	"github.com/zeromicro/go-zero/core/lang"
 
-	"github.com/suyuan32/goctls/pkg/parser/api/ast"
-	"github.com/suyuan32/goctls/pkg/parser/api/importstack"
-	"github.com/suyuan32/goctls/pkg/parser/api/placeholder"
-	"github.com/suyuan32/goctls/pkg/parser/api/token"
+	"github.com/Tricitrus/goctls/pkg/parser/api/ast"
+	"github.com/Tricitrus/goctls/pkg/parser/api/importstack"
+	"github.com/Tricitrus/goctls/pkg/parser/api/placeholder"
+	"github.com/Tricitrus/goctls/pkg/parser/api/token"
 )
 
 const (
@@ -31,7 +31,7 @@ type API struct {
 }
 
 func convert2API(a *ast.AST, importSet map[string]lang.PlaceholderType, is *importstack.ImportStack) (*API, error) {
-	var api = new(API)
+	api := new(API)
 	api.importManager = is
 	api.importSet = importSet
 	api.Filename = a.Filename
@@ -117,7 +117,7 @@ func (api *API) checkServiceStmt() error {
 	serviceNameChecker := f.addCheckItem(api.Filename, "service name expression")
 	handlerChecker := f.addCheckItem(api.Filename, "handler expression")
 	pathChecker := f.addCheckItem(api.Filename, "path expression")
-	var serviceName = map[string]string{}
+	serviceName := map[string]string{}
 	for _, v := range api.ServiceStmts {
 		name := strings.TrimSuffix(v.Name.Format(""), "-api")
 		if sn, ok := serviceName[name]; ok {
@@ -160,7 +160,7 @@ func (api *API) checkTypeStmt() error {
 }
 
 func (api *API) checkTypeDeclareContext() error {
-	var typeMap = map[string]placeholder.Type{}
+	typeMap := map[string]placeholder.Type{}
 	for _, v := range api.TypeStmt {
 		switch tp := v.(type) {
 		case *ast.TypeLiteralStmt:
@@ -176,7 +176,7 @@ func (api *API) checkTypeDeclareContext() error {
 }
 
 func (api *API) checkTypeContext(declareContext map[string]placeholder.Type) error {
-	var em = newErrorManager()
+	em := newErrorManager()
 	for _, v := range api.TypeStmt {
 		switch tp := v.(type) {
 		case *ast.TypeLiteralStmt:
@@ -204,7 +204,7 @@ func (api *API) checkTypeExprContext(declareContext map[string]placeholder.Type,
 		}
 		return nil
 	case *ast.MapDataType:
-		var manager = newErrorManager()
+		manager := newErrorManager()
 		manager.add(api.checkTypeExprContext(declareContext, val.Key))
 		manager.add(api.checkTypeExprContext(declareContext, val.Value))
 		return manager.error()
@@ -213,7 +213,7 @@ func (api *API) checkTypeExprContext(declareContext map[string]placeholder.Type,
 	case *ast.SliceDataType:
 		return api.checkTypeExprContext(declareContext, val.DataType)
 	case *ast.StructDataType:
-		var manager = newErrorManager()
+		manager := newErrorManager()
 		for _, e := range val.Elements {
 			manager.add(api.checkTypeExprContext(declareContext, e.DataType))
 		}
@@ -255,7 +255,7 @@ func (api *API) parseImportedAPI(imports []ast.ImportStmt) ([]*API, error) {
 		return list, nil
 	}
 
-	var importValueSet = map[string]token.Token{}
+	importValueSet := map[string]token.Token{}
 	for _, imp := range imports {
 		switch val := imp.(type) {
 		case *ast.ImportLiteralStmt:

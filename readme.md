@@ -1,12 +1,12 @@
 # Goctls
 
-## Goctls is a powerful tools for simple admin to gen codes, based on goctl | Goctls 是一个为 simple admin 设计的代码生成工具, 基于 go zero 官方工具 goctl 开发而成
+## Goctls is a powerful tools for tricitrus admin to gen codes, based on goctl | Goctls 是一个为 tricitrus admin 设计的代码生成工具, 基于 go zero 官方工具 goctl 开发而成
 
 
 ## Install | 安装方法
 
 ```shell
-go install github.com/suyuan32/goctls@latest
+go install github.com/Tricitrus/goctls@latest
 ```
 
 ## Features | 特性
@@ -27,7 +27,7 @@ go install github.com/suyuan32/goctls@latest
 - 简单易用的校验器
 - 支持代码生成，生成API,RPC 和 web 端的CRUD代码
 - 支持多种额外插件如GORM, RocketMQ
-- 对Simple Admin 的针对性优化
+- 对Tricitrus Admin 的针对性优化
 - rpc logic group分组
 - 全面支持 Ent 代码生成 
 
@@ -36,4 +36,4 @@ go install github.com/suyuan32/goctls@latest
 
 > [go zero原版工具 | the original tools](https://github.com/zeromicro/go-zero/tree/master/tools/goctl)
 
-## Simple Admin Core [https://github.com/suyuan32/simple-admin-core](https://github.com/suyuan32/simple-admin-core)
+## Tricitrus Admin Core [https://github.com/Tricitrus/tricitrus-admin-core](https://github.com/Tricitrus/tricitrus-admin-core)

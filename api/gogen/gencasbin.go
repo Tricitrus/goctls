@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"path/filepath"
 
+	"github.com/Tricitrus/goctls/config"
+	"github.com/Tricitrus/goctls/rpc/execx"
 	"github.com/duke-git/lancet/v2/fileutil"
-	"github.com/suyuan32/goctls/config"
-	"github.com/suyuan32/goctls/rpc/execx"
 )
 
 func genCasbin(dir string, cfg *config.Config, g *GenContext) error {
@@ -24,7 +24,6 @@ func genCasbin(dir string, cfg *config.Config, g *GenContext) error {
 	}
 
 	_, err := execx.Run(fmt.Sprintf("goctls extra middleware api -a authority%s -s %s", useI18n, cfg.NamingFormat), dir)
-
 	if err != nil {
 		return err
 	}

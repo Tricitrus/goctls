@@ -1,9 +1,9 @@
 package config
 
 import (
-    {{if .useCasbin}}"github.com/suyuan32/simple-admin-common/plugins/casbin"
-    "github.com/suyuan32/simple-admin-common/config"{{else}}{{if .useEnt}}"github.com/suyuan32/simple-admin-common/config"{{end}}{{end}}{{if .useI18n}}
-	"github.com/suyuan32/simple-admin-common/i18n"
+    {{if .useCasbin}}"github.com/Tricitrus/tricitrus-admin-common/plugins/casbin"
+    "github.com/Tricitrus/tricitrus-admin-common/config"{{else}}{{if .useEnt}}"github.com/Tricitrus/tricitrus-admin-common/config"{{end}}{{end}}{{if .useI18n}}
+	"github.com/Tricitrus/tricitrus-admin-common/i18n"
 {{end}}
 	"github.com/zeromicro/go-zero/rest"{{if .useCoreRpc}}
 	"github.com/zeromicro/go-zero/zrpc"{{end}}

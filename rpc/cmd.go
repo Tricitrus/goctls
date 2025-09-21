@@ -3,9 +3,9 @@ package rpc
 import (
 	"github.com/spf13/cobra"
 
-	"github.com/suyuan32/goctls/config"
-	"github.com/suyuan32/goctls/internal/cobrax"
-	"github.com/suyuan32/goctls/rpc/cli"
+	"github.com/Tricitrus/goctls/config"
+	"github.com/Tricitrus/goctls/internal/cobrax"
+	"github.com/Tricitrus/goctls/rpc/cli"
 )
 
 var (

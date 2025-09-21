@@ -6,9 +6,9 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/Tricitrus/goctls/rpc/execx"
+	"github.com/Tricitrus/goctls/util/format"
 	"github.com/duke-git/lancet/v2/fileutil"
-	"github.com/suyuan32/goctls/rpc/execx"
-	"github.com/suyuan32/goctls/util/format"
 )
 
 const initEntCodeTpl string = `    if err := l.svcCtx.DB.Schema.Create(l.ctx, schema.WithForeignKeys(false)); err != nil {
@@ -49,10 +49,10 @@ func (g *Generator) GenEntInitCode(zctx *ZRpcContext, abs string) error {
 
 		if zctx.I18n {
 			baseLogicStr = strings.ReplaceAll(baseLogicStr, "BaseResp{},", "BaseResp{Msg: i18n.Success},")
-			baseLogicStr = strings.ReplaceAll(baseLogicStr, "\"context\"", "\"context\"\n\t\"entgo.io/ent/dialect/sql/schema\"\n\t\"github.com/suyuan32/simple-admin-common/i18n\"\n\t\"github.com/suyuan32/simple-admin-common/msg/logmsg\"\n\t\"github.com/zeromicro/go-zero/core/errorx\"")
+			baseLogicStr = strings.ReplaceAll(baseLogicStr, "\"context\"", "\"context\"\n\t\"entgo.io/ent/dialect/sql/schema\"\n\t\"github.com/Tricitrus/tricitrus-admin-common/i18n\"\n\t\"github.com/Tricitrus/tricitrus-admin-common/msg/logmsg\"\n\t\"github.com/zeromicro/go-zero/core/errorx\"")
 		} else {
 			baseLogicStr = strings.ReplaceAll(baseLogicStr, "BaseResp{},", "BaseResp{Msg: errormsg.Success},")
-			baseLogicStr = strings.ReplaceAll(baseLogicStr, "\"context\"", "\"context\"\n\t\"entgo.io/ent/dialect/sql/schema\"\n\t\"github.com/suyuan32/simple-admin-common/msg/errormsg\"\n\t\"github.com/suyuan32/simple-admin-common/msg/logmsg\"\n\t\"github.com/zeromicro/go-zero/core/errorx\"")
+			baseLogicStr = strings.ReplaceAll(baseLogicStr, "\"context\"", "\"context\"\n\t\"entgo.io/ent/dialect/sql/schema\"\n\t\"github.com/Tricitrus/tricitrus-admin-common/msg/errormsg\"\n\t\"github.com/Tricitrus/tricitrus-admin-common/msg/logmsg\"\n\t\"github.com/zeromicro/go-zero/core/errorx\"")
 		}
 
 		err = fileutil.WriteStringToFile(initFilePath, baseLogicStr, false)

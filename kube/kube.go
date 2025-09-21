@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"text/template"
 
+	"github.com/Tricitrus/goctls/util"
+	"github.com/Tricitrus/goctls/util/pathx"
 	"github.com/gookit/color"
 	"github.com/spf13/cobra"
-	"github.com/suyuan32/goctls/util"
-	"github.com/suyuan32/goctls/util/pathx"
 )
 
 const (

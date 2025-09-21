@@ -26,12 +26,10 @@ import (
 	"github.com/gookit/color"
 	"github.com/spf13/cobra"
 
-	"github.com/suyuan32/goctls/util/format"
+	"github.com/Tricitrus/goctls/util/format"
 )
 
-var (
-	VarStringModelName string
-)
+var VarStringModelName string
 
 //go:embed tpl/basic.tpl
 var schemaTpl string
@@ -52,7 +50,6 @@ func GenSchema(_ *cobra.Command, _ []string) error {
 		"ModelName":          VarStringModelName,
 		"ModelNameLowercase": strings.ToLower(VarStringModelName),
 	})
-
 	if err != nil {
 		return err
 	}

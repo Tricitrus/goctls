@@ -26,9 +26,9 @@ import (
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 
-	"github.com/suyuan32/goctls/rpc/parser"
-	"github.com/suyuan32/goctls/util/format"
-	"github.com/suyuan32/goctls/util/protox"
+	"github.com/Tricitrus/goctls/rpc/parser"
+	"github.com/Tricitrus/goctls/util/format"
+	"github.com/Tricitrus/goctls/util/protox"
 )
 
 var (
@@ -114,7 +114,6 @@ func DoGen(g *GenContext) error {
 				routeData.WriteString(fmt.Sprintf("\n    // %s\n    @handler %s\n    post /%s/%s (%s) returns (%s)\n",
 					r.Name, r.Name, strings.ToLower(g.ModelName), urlName, r.RequestType, ConvertRpcBaseStruct(r.ReturnsType)))
 			}
-
 		}
 	}
 

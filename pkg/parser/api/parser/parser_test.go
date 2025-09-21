@@ -7,16 +7,16 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/suyuan32/goctls/pkg/parser/api/assertx"
-	"github.com/suyuan32/goctls/pkg/parser/api/ast"
-	"github.com/suyuan32/goctls/pkg/parser/api/token"
+	"github.com/Tricitrus/goctls/pkg/parser/api/assertx"
+	"github.com/Tricitrus/goctls/pkg/parser/api/ast"
+	"github.com/Tricitrus/goctls/pkg/parser/api/token"
 )
 
 //go:embed testdata/comment_test.api
 var testCommentInput string
 
 func TestParser_init(t *testing.T) {
-	var testData = []string{
+	testData := []string{
 		"`",
 		"@`",
 		"syntax/**/`",
@@ -39,7 +39,7 @@ func TestParser_Parse(t *testing.T) {
 		assert.True(t, p.hasNoErrors())
 	})
 	t.Run("invalid", func(t *testing.T) {
-		var testData = []string{
+		testData := []string{
 			"foo bar",
 			"@",
 		}
@@ -52,9 +52,8 @@ func TestParser_Parse(t *testing.T) {
 }
 
 func TestParser_Parse_Mode(t *testing.T) {
-
 	t.Run("All", func(t *testing.T) {
-		var testData = []string{
+		testData := []string{
 			`// foo`,
 			`// bar`,
 			`/*foo*/`,
@@ -75,7 +74,7 @@ func TestParser_Parse_Mode(t *testing.T) {
 
 func TestParser_Parse_syntaxStmt(t *testing.T) {
 	t.Run("valid", func(t *testing.T) {
-		var testData = []struct {
+		testData := []struct {
 			input    string
 			expected string
 		}{
@@ -104,7 +103,7 @@ func TestParser_Parse_syntaxStmt(t *testing.T) {
 		}
 	})
 	t.Run("invalid", func(t *testing.T) {
-		var testData = []string{
+		testData := []string{
 			`syntax`,
 			`syntax = `,
 			`syntax = ''`,
@@ -143,7 +142,6 @@ func TestParser_Parse_infoStmt(t *testing.T) {
 			expectedValue := expected[stmt.Key.Token.Text]
 			assert.Equal(t, expectedValue, actual)
 		}
-
 	})
 
 	t.Run("empty", func(t *testing.T) {
@@ -160,7 +158,7 @@ func TestParser_Parse_infoStmt(t *testing.T) {
 	})
 
 	t.Run("invalid", func(t *testing.T) {
-		var testData = []string{
+		testData := []string{
 			`info`,
 			`info(`,
 			`info{`,
@@ -190,7 +188,7 @@ var testImportLiteral string
 
 func TestParser_Parse_importLiteral(t *testing.T) {
 	t.Run("valid", func(t *testing.T) {
-		var testData = []string{
+		testData := []string{
 			`""`,
 			`"foo"`,
 			`"bar"`,
@@ -206,7 +204,7 @@ func TestParser_Parse_importLiteral(t *testing.T) {
 		}
 	})
 	t.Run("invalid", func(t *testing.T) {
-		var testData = []string{
+		testData := []string{
 			`import`,
 			`import "`,
 			`import "foo`,
@@ -228,7 +226,7 @@ var testImportGroup string
 
 func TestParser_Parse_importGroup(t *testing.T) {
 	t.Run("valid", func(t *testing.T) {
-		var testData = []string{
+		testData := []string{
 			`""`,
 			`"foo"`,
 			`"bar"`,
@@ -261,7 +259,7 @@ func TestParser_Parse_importGroup(t *testing.T) {
 	})
 
 	t.Run("invalid", func(t *testing.T) {
-		var testData = []string{
+		testData := []string{
 			`import`,
 			`import (`,
 			`import {`,
@@ -285,7 +283,7 @@ var atServerTestAPI string
 
 func TestParser_Parse_atServerStmt(t *testing.T) {
 	t.Run("valid", func(t *testing.T) {
-		var expectedData = map[string]string{
+		expectedData := map[string]string{
 			"foo:":        `bar`,
 			"bar:":        `baz`,
 			"baz:":        `foo`,
@@ -334,7 +332,7 @@ func TestParser_Parse_atServerStmt(t *testing.T) {
 	})
 
 	t.Run("invalidInSkipCommentMode", func(t *testing.T) {
-		var testData = []string{
+		testData := []string{
 			`@server`,
 			`@server{`,
 			`@server(`,
@@ -367,7 +365,7 @@ func TestParser_Parse_atServerStmt(t *testing.T) {
 	})
 
 	t.Run("invalidWithNoSkipCommentMode", func(t *testing.T) {
-		var testData = []string{
+		testData := []string{
 			`@server`,
 			`@server //foo`,
 			`@server /*foo*/`,
@@ -385,7 +383,7 @@ var atHandlerTestAPI string
 
 func TestParser_Parse_atHandler(t *testing.T) {
 	t.Run("valid", func(t *testing.T) {
-		var testData = []string{
+		testData := []string{
 			`@handler foo`,
 			`@handler foo1`,
 			`@handler _bar`,
@@ -403,7 +401,7 @@ func TestParser_Parse_atHandler(t *testing.T) {
 	})
 
 	t.Run("invalid", func(t *testing.T) {
-		var testData = []string{
+		testData := []string{
 			`@handler`,
 			`@handler 1`,
 			`@handler ""`,
@@ -424,7 +422,7 @@ var atDocLiteralTestAPI string
 
 func TestParser_Parse_atDocLiteral(t *testing.T) {
 	t.Run("validLiteral", func(t *testing.T) {
-		var testData = []string{
+		testData := []string{
 			`""`,
 			`"foo"`,
 			`"bar"`,
@@ -442,7 +440,7 @@ func TestParser_Parse_atDocLiteral(t *testing.T) {
 	})
 
 	t.Run("invalid", func(t *testing.T) {
-		var testData = []string{
+		testData := []string{
 			`@doc`,
 			`@doc "`,
 			`@doc $`,
@@ -462,7 +460,7 @@ var atDocGroupTestAPI string
 
 func TestParser_Parse_atDocGroup(t *testing.T) {
 	t.Run("valid", func(t *testing.T) {
-		var testData = `@doc (
+		testData := `@doc (
 	foo: "foo"
 	bar: "bar"
 	baz: ""
@@ -477,7 +475,7 @@ func TestParser_Parse_atDocGroup(t *testing.T) {
 	})
 
 	t.Run("invalid", func(t *testing.T) {
-		var testData = []string{
+		testData := []string{
 			`@doc{`,
 			`@doc(`,
 			`@doc(}`,
@@ -521,7 +519,7 @@ func TestParser_Parse_service(t *testing.T) {
 	}
 
 	t.Run("valid", func(t *testing.T) {
-		var testData = []*ast.ServiceStmt{
+		testData := []*ast.ServiceStmt{
 			{
 				Service: ast.NewTokenNode(token.Token{Type: token.IDENT, Text: "service"}),
 				Name: &ast.ServiceNameExpr{
@@ -931,7 +929,7 @@ func TestParser_Parse_service(t *testing.T) {
 	})
 
 	t.Run("invalid", func(t *testing.T) {
-		var testData = []string{
+		testData := []string{
 			`service`,
 			`service foo`,
 			`service -`,
@@ -992,7 +990,7 @@ func TestParser_Parse_service(t *testing.T) {
 	})
 
 	t.Run("invalidBeginWithAtServer", func(t *testing.T) {
-		var testData = []string{
+		testData := []string{
 			`@server(`,
 			`@server() service`,
 			`@server() foo`,
@@ -1009,7 +1007,7 @@ func TestParser_Parse_service(t *testing.T) {
 
 func TestParser_Parse_pathItem(t *testing.T) {
 	t.Run("valid", func(t *testing.T) {
-		var testData = []struct {
+		testData := []struct {
 			input    string
 			expected string
 		}{
@@ -1045,7 +1043,7 @@ func TestParser_Parse_pathItem(t *testing.T) {
 	})
 
 	t.Run("invalid", func(t *testing.T) {
-		var testData = []string{
+		testData := []string{
 			"-foo",
 			"foo-",
 			"foo-2",
@@ -1075,7 +1073,7 @@ func TestParser_Parse_parseTypeStmt(t *testing.T) {
 		assert.Equal(t, expected.Format(""), actual.Format(""))
 	}
 	t.Run("parseTypeLiteralStmt", func(t *testing.T) {
-		var testData = []struct {
+		testData := []struct {
 			input    string
 			expected ast.TypeStmt
 		}{
@@ -1400,7 +1398,7 @@ func TestParser_Parse_parseTypeStmt(t *testing.T) {
 		}
 	})
 	t.Run("parseTypeGroupStmt", func(t *testing.T) {
-		var testData = []struct {
+		testData := []struct {
 			input    string
 			expected ast.TypeStmt
 		}{
@@ -1484,7 +1482,7 @@ func TestParser_Parse_parseTypeStmt(t *testing.T) {
 }
 
 func TestParser_Parse_parseTypeStmt_invalid(t *testing.T) {
-	var testData = []string{
+	testData := []string{
 		/**************** type literal stmt ****************/
 		"type",
 		"type @",

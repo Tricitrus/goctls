@@ -10,8 +10,8 @@ import (
 	"{{.projectPath}}{{.importPrefix}}/internal/utils/dberrorhandler"
 	"{{.projectPath}}{{.importPrefix}}/types/{{.projectName}}"
 
-{{if .hasUUID}}    "github.com/suyuan32/simple-admin-common/utils/uuidx"
-{{end}}{{if or .HasCreated .hasPointy}}	"github.com/suyuan32/simple-admin-common/utils/pointy"{{end}}
+{{if .hasUUID}}    "github.com/Tricitrus/tricitrus-admin-common/utils/uuidx"
+{{end}}{{if or .HasCreated .hasPointy}}	"github.com/Tricitrus/tricitrus-admin-common/utils/pointy"{{end}}
     "github.com/zeromicro/go-zero/core/logx"
 )
 

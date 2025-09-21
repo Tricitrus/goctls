@@ -21,7 +21,7 @@ import (
 
 	"github.com/iancoleman/strcase"
 
-	"github.com/suyuan32/goctls/util"
+	"github.com/Tricitrus/goctls/util"
 )
 
 func genModalIndex(g *GenContext) error {

@@ -1,18 +1,18 @@
 package extra
 
 import (
-	"github.com/suyuan32/goctls/extra/ent/importschema"
-	"github.com/suyuan32/goctls/extra/ent/localmixin"
-	"github.com/suyuan32/goctls/extra/ent/schema"
-	"github.com/suyuan32/goctls/extra/ent/template"
-	"github.com/suyuan32/goctls/extra/i18n"
-	"github.com/suyuan32/goctls/extra/initlogic"
-	"github.com/suyuan32/goctls/extra/logviewer"
-	"github.com/suyuan32/goctls/extra/makefile"
-	"github.com/suyuan32/goctls/extra/middleware"
-	"github.com/suyuan32/goctls/extra/proto2api"
-	"github.com/suyuan32/goctls/extra/rpcconfgen"
-	"github.com/suyuan32/goctls/internal/cobrax"
+	"github.com/Tricitrus/goctls/extra/ent/importschema"
+	"github.com/Tricitrus/goctls/extra/ent/localmixin"
+	"github.com/Tricitrus/goctls/extra/ent/schema"
+	"github.com/Tricitrus/goctls/extra/ent/template"
+	"github.com/Tricitrus/goctls/extra/i18n"
+	"github.com/Tricitrus/goctls/extra/initlogic"
+	"github.com/Tricitrus/goctls/extra/logviewer"
+	"github.com/Tricitrus/goctls/extra/makefile"
+	"github.com/Tricitrus/goctls/extra/middleware"
+	"github.com/Tricitrus/goctls/extra/proto2api"
+	"github.com/Tricitrus/goctls/extra/rpcconfgen"
+	"github.com/Tricitrus/goctls/internal/cobrax"
 )
 
 var (
@@ -94,7 +94,7 @@ func init() {
 	entImportCmdFlags.StringVarP(&importschema.VarStringDSN, "dsn", "d")
 	entImportCmdFlags.StringVarP(&importschema.VarStringTables, "tables", "t")
 	entImportCmdFlags.StringVarP(&importschema.VarStringOutputDir, "output", "o")
-	//entImportCmdFlags.BoolVarP(&importschema.VarBoolAutoMixin, "auto_mixin", "a")
+	// entImportCmdFlags.BoolVarP(&importschema.VarBoolAutoMixin, "auto_mixin", "a")
 	entImportCmdFlags.StringVarP(&importschema.VarStringExcludeTables, "exclude_tables", "e")
 	entImportCmdFlags.BoolVarPWithDefaultValue(&importschema.VarBoolPluralTable, "plural_table", "p", true)
 

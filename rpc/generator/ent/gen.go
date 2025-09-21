@@ -34,12 +34,12 @@ import (
 	"github.com/iancoleman/strcase"
 	"github.com/zeromicro/go-zero/core/logx"
 
-	"github.com/suyuan32/goctls/rpc/parser"
-	"github.com/suyuan32/goctls/util/ctx"
-	"github.com/suyuan32/goctls/util/entx"
-	"github.com/suyuan32/goctls/util/format"
-	"github.com/suyuan32/goctls/util/pathx"
-	"github.com/suyuan32/goctls/util/protox"
+	"github.com/Tricitrus/goctls/rpc/parser"
+	"github.com/Tricitrus/goctls/util/ctx"
+	"github.com/Tricitrus/goctls/util/entx"
+	"github.com/Tricitrus/goctls/util/format"
+	"github.com/Tricitrus/goctls/util/pathx"
+	"github.com/Tricitrus/goctls/util/protox"
 )
 
 const regularPerm = 0o666
@@ -682,7 +682,6 @@ func GenProtoData(schema *load.Schema, g GenEntLogicContext) (string, string, er
 		"IdType":     g.IdType,
 		"HasCreated": g.HasCreated,
 	})
-
 	if err != nil {
 		logx.Error(err)
 		return "", "", err

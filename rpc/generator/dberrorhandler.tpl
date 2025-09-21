@@ -4,9 +4,9 @@ import (
     "github.com/zeromicro/go-zero/core/errorx"
 	"github.com/zeromicro/go-zero/core/logx"
 
-{{if .useI18n}}    "github.com/suyuan32/simple-admin-common/i18n"
-{{else}}    "github.com/suyuan32/simple-admin-common/msg/errormsg"
-{{end}}	"github.com/suyuan32/simple-admin-common/msg/logmsg"
+{{if .useI18n}}    "github.com/Tricitrus/tricitrus-admin-common/i18n"
+{{else}}    "github.com/Tricitrus/tricitrus-admin-common/msg/errormsg"
+{{end}}	"github.com/Tricitrus/tricitrus-admin-common/msg/logmsg"
 
 	"{{ .package}}/ent"
 )

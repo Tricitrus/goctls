@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"strings"
 
-	"github.com/suyuan32/goctls/config"
+	"github.com/Tricitrus/goctls/config"
 )
 
 // BuildVersion is the version of goctl.

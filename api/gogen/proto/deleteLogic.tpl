@@ -7,8 +7,8 @@ import (
 	"{{.projectPackage}}{{.importPrefix}}/internal/types"
 	"{{.rpcPackage}}"
 {{if and .useI18n .optionalService}}
-	"github.com/suyuan32/simple-admin-common/i18n"{{end}}{{if .optionalService}}{{if not .useI18n}}
-	"github.com/suyuan32/simple-admin-common/msg/errormsg"{{end}}
+	"github.com/Tricitrus/tricitrus-admin-common/i18n"{{end}}{{if .optionalService}}{{if not .useI18n}}
+	"github.com/Tricitrus/tricitrus-admin-common/msg/errormsg"{{end}}
 	"github.com/zeromicro/go-zero/core/errorx"{{end}}
 	"github.com/zeromicro/go-zero/core/logx"
 )

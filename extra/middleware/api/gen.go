@@ -7,14 +7,14 @@ import (
 	"strings"
 	"text/template"
 
+	"github.com/Tricitrus/goctls/extra/middleware/api/tmpl"
+	"github.com/Tricitrus/goctls/util/console"
+	"github.com/Tricitrus/goctls/util/env"
+	"github.com/Tricitrus/goctls/util/format"
 	"github.com/duke-git/lancet/v2/fileutil"
 	"github.com/gookit/color"
 	"github.com/jedib0t/go-pretty/v6/table"
 	"github.com/spf13/cobra"
-	"github.com/suyuan32/goctls/extra/middleware/api/tmpl"
-	"github.com/suyuan32/goctls/util/console"
-	"github.com/suyuan32/goctls/util/env"
-	"github.com/suyuan32/goctls/util/format"
 )
 
 var (

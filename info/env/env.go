@@ -33,10 +33,10 @@ func ShowEnv(_ *cobra.Command, _ []string) error {
 	}
 
 	if lang {
-		color.Green.Println("Simple Admin的环境变量")
+		color.Green.Println("Tricitrus Admin的环境变量")
 		color.Red.Println("注意： 环境变量的优先级大于配置文件")
 	} else {
-		color.Green.Println("Simple Admin's environment variables")
+		color.Green.Println("Tricitrus Admin's environment variables")
 		color.Red.Println("Notice: Environment variables have priority over configuration files")
 	}
 

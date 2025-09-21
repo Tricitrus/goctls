@@ -7,9 +7,9 @@ import (
 	"strings"
 	"text/template"
 
+	"github.com/Tricitrus/goctls/util/pathx"
 	"github.com/gookit/color"
 	"github.com/spf13/cobra"
-	"github.com/suyuan32/goctls/util/pathx"
 )
 
 var (
@@ -32,7 +32,7 @@ var (
 )
 
 type Drone struct {
-	//步骤三
+	// 步骤三
 	DroneName    string
 	GitGoPrivate string
 	ServiceName  string

@@ -7,9 +7,9 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/Tricitrus/goctls/pkg/parser/api/assertx"
+	"github.com/Tricitrus/goctls/pkg/parser/api/token"
 	"github.com/stretchr/testify/assert"
-	"github.com/suyuan32/goctls/pkg/parser/api/assertx"
-	"github.com/suyuan32/goctls/pkg/parser/api/token"
 )
 
 func Test_readData(t *testing.T) {
@@ -76,7 +76,7 @@ func TestNewScanner(t *testing.T) {
 }
 
 func TestScanner_NextToken_lineComment(t *testing.T) {
-	var testData = []token.Token{
+	testData := []token.Token{
 		{
 			Type: token.COMMENT,
 			Text: "//",
@@ -133,7 +133,7 @@ func TestScanner_NextToken_lineComment(t *testing.T) {
 		},
 		token.EofToken,
 	}
-	var input = "//\n//foo\n//bar\n///\n////\n/"
+	input := "//\n//foo\n//bar\n///\n////\n/"
 	s, err := NewScanner("foo.api", input)
 	assert.NoError(t, err)
 	for _, expected := range testData {
@@ -144,7 +144,7 @@ func TestScanner_NextToken_lineComment(t *testing.T) {
 }
 
 func TestScanner_NextToken_document(t *testing.T) {
-	var testData = []token.Token{
+	testData := []token.Token{
 		{
 			Type: token.DOCUMENT,
 			Text: "/**/",
@@ -228,7 +228,7 @@ func TestScanner_NextToken_document(t *testing.T) {
 		},
 		token.EofToken,
 	}
-	var input = "/**/ /***/ /*-*/ /*/*/ /*////*/  \n/*foo*/\n/*---*/\n/*\n*/\n/"
+	input := "/**/ /***/ /*-*/ /*/*/ /*////*/  \n/*foo*/\n/*---*/\n/*\n*/\n/"
 	s, err := NewScanner("foo.api", input)
 	assert.NoError(t, err)
 	for _, expected := range testData {
@@ -239,7 +239,7 @@ func TestScanner_NextToken_document(t *testing.T) {
 }
 
 func TestScanner_NextToken_invalid_document(t *testing.T) {
-	var testData = []string{
+	testData := []string{
 		"/*",
 		"/**",
 		"/***",
@@ -256,7 +256,7 @@ func TestScanner_NextToken_invalid_document(t *testing.T) {
 }
 
 func TestScanner_NextToken_operator(t *testing.T) {
-	var testData = []token.Token{
+	testData := []token.Token{
 		{
 			Type: token.SUB,
 			Text: "-",
@@ -377,7 +377,7 @@ func TestScanner_NextToken_operator(t *testing.T) {
 
 func TestScanner_NextToken_at(t *testing.T) {
 	t.Run("valid", func(t *testing.T) {
-		var testData = []token.Token{
+		testData := []token.Token{
 			{
 				Type: token.AT_DOC,
 				Text: "@doc",
@@ -433,7 +433,7 @@ func TestScanner_NextToken_at(t *testing.T) {
 		}
 	})
 	t.Run("invalid", func(t *testing.T) {
-		var testData = []string{
+		testData := []string{
 			"@h",
 			"@ha",
 			"@han",
@@ -459,7 +459,7 @@ func TestScanner_NextToken_at(t *testing.T) {
 }
 
 func TestScanner_NextToken_ident(t *testing.T) {
-	var testData = []token.Token{
+	testData := []token.Token{
 		{
 			Type: token.IDENT,
 			Text: "foo",
@@ -570,7 +570,7 @@ func TestScanner_NextToken_ident(t *testing.T) {
 }
 
 func TestScanner_NextToken_Key(t *testing.T) {
-	var testData = []token.Token{
+	testData := []token.Token{
 		{
 			Type: token.IDENT,
 			Text: "foo",
@@ -645,7 +645,7 @@ func TestScanner_NextToken_Key(t *testing.T) {
 }
 
 func TestScanner_NextToken_int(t *testing.T) {
-	var testData = []token.Token{
+	testData := []token.Token{
 		{
 			Type: token.INT,
 			Text: `123`,
@@ -694,7 +694,7 @@ func TestScanner_NextToken_int(t *testing.T) {
 
 func TestScanner_NextToken_duration(t *testing.T) {
 	t.Run("ns", func(t *testing.T) {
-		var testData = []token.Token{
+		testData := []token.Token{
 			{
 				Type: token.DURATION,
 				Text: `1ns`,
@@ -732,7 +732,7 @@ func TestScanner_NextToken_duration(t *testing.T) {
 		}
 	})
 	t.Run("µs", func(t *testing.T) {
-		var testData = []token.Token{
+		testData := []token.Token{
 			{
 				Type: token.DURATION,
 				Text: `1µs`,
@@ -899,7 +899,7 @@ func TestScanner_NextToken_duration(t *testing.T) {
 
 func TestScanner_NextToken_string(t *testing.T) {
 	t.Run("valid", func(t *testing.T) {
-		var testData = []token.Token{
+		testData := []token.Token{
 			{
 				Type: token.STRING,
 				Text: `""`,
@@ -937,7 +937,7 @@ func TestScanner_NextToken_string(t *testing.T) {
 		}
 	})
 	t.Run("invalid", func(t *testing.T) {
-		var testData = []string{
+		testData := []string{
 			`"`,
 			`"foo`,
 			`"
@@ -954,7 +954,7 @@ func TestScanner_NextToken_string(t *testing.T) {
 
 func TestScanner_NextToken_rawString(t *testing.T) {
 	t.Run("valid", func(t *testing.T) {
-		var testData = []token.Token{
+		testData := []token.Token{
 			{
 				Type: token.RAW_STRING,
 				Text: "``",
@@ -992,7 +992,7 @@ func TestScanner_NextToken_rawString(t *testing.T) {
 		}
 	})
 	t.Run("invalid", func(t *testing.T) {
-		var testData = []string{
+		testData := []string{
 			"`",
 			"`foo",
 			"`    ",
@@ -1008,7 +1008,7 @@ func TestScanner_NextToken_rawString(t *testing.T) {
 
 func TestScanner_NextToken_anyCase(t *testing.T) {
 	t.Run("case1", func(t *testing.T) {
-		var testData = []string{
+		testData := []string{
 			"#",
 			"$",
 			"^",
@@ -1063,7 +1063,7 @@ func TestScanner_NextToken(t *testing.T) {
 			Column:   column,
 		}
 	}
-	var testData = []token.Token{
+	testData := []token.Token{
 		{
 			Type:     token.IDENT,
 			Text:     "syntax",
@@ -1360,7 +1360,7 @@ func TestScanner_NextToken(t *testing.T) {
 }
 
 func TestScanner_NextToken_type(t *testing.T) {
-	var testData = []token.Token{
+	testData := []token.Token{
 		{
 			Type: token.IDENT,
 			Text: "foo",
@@ -1479,7 +1479,7 @@ func TestScanner_NextToken_type(t *testing.T) {
 			},
 		},
 	}
-	var input = "foo string `json:\"foo\"`\nbar []int\nbaz map[string]int"
+	input := "foo string `json:\"foo\"`\nbar []int\nbaz map[string]int"
 	scanner, err := NewScanner("foo.api", input)
 	assert.NoError(t, err)
 	for _, v := range testData {

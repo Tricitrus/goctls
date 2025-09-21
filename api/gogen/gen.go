@@ -18,18 +18,18 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/zeromicro/go-zero/core/logx"
 
-	"github.com/suyuan32/goctls/api/gogen/ent"
-	"github.com/suyuan32/goctls/util/format"
+	"github.com/Tricitrus/goctls/api/gogen/ent"
+	"github.com/Tricitrus/goctls/util/format"
 
-	apiformat "github.com/suyuan32/goctls/api/format"
-	"github.com/suyuan32/goctls/api/gogen/proto"
-	"github.com/suyuan32/goctls/api/parser"
-	apiutil "github.com/suyuan32/goctls/api/util"
-	"github.com/suyuan32/goctls/config"
-	"github.com/suyuan32/goctls/pkg/golang"
-	"github.com/suyuan32/goctls/rpc/execx"
-	"github.com/suyuan32/goctls/util"
-	"github.com/suyuan32/goctls/util/pathx"
+	apiformat "github.com/Tricitrus/goctls/api/format"
+	"github.com/Tricitrus/goctls/api/gogen/proto"
+	"github.com/Tricitrus/goctls/api/parser"
+	apiutil "github.com/Tricitrus/goctls/api/util"
+	"github.com/Tricitrus/goctls/config"
+	"github.com/Tricitrus/goctls/pkg/golang"
+	"github.com/Tricitrus/goctls/rpc/execx"
+	"github.com/Tricitrus/goctls/util"
+	"github.com/Tricitrus/goctls/util/pathx"
 )
 
 const tmpFile = "%s-%d"
@@ -221,7 +221,6 @@ func DoGenProject(apiFile, dir, style string, g *GenContext) error {
 		}
 
 		_, err = execx.Run(makefileCmd, dir)
-
 		if err != nil {
 			return err
 		}

@@ -18,7 +18,7 @@ package vben5
 import (
 	"strings"
 
-	"github.com/suyuan32/goctls/api/spec"
+	"github.com/Tricitrus/goctls/api/spec"
 )
 
 func ConvertGoTypeToTsType(goType string) string {
@@ -40,7 +40,6 @@ func ConvertGoTypeToTsType(goType string) string {
 }
 
 func FindBeginEndOfLocaleField(data, target string) (int, int) {
-
 	begin := strings.Index(data, target)
 
 	if begin == -1 {
